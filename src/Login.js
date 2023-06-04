@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Routes,Route,BrowserRouter,useNavigate,useLocation   } from "react-router-dom";
 import { Dashboard } from "./Dashboard"
+import './Login.css'
 
 
 function useAuth(username) {
@@ -42,19 +43,19 @@ function FormComponent() {
       
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" value={username} onChange={handleUsernameChange} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="text" name="email" value={password} onChange={handlePasswordChange} />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div className='Desktop1_login'>
+      <div className='rect1'>
+        <div className='rect2'>
+          <p className='Login'>Login</p>
+          <form onSubmit={handleSubmit}>
+              <input type="text" className='UserName' name="name" value={username} onChange={handleUsernameChange} />
+              <input type="password" className='Password' name="email" value={password} onChange={handlePasswordChange} />
+            <button className='Submit' type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
   );
 }
 
