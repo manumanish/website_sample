@@ -5,7 +5,7 @@ import { Dashboard } from "./Dashboard"
 
 function useAuth(username) {
   console.log(username);
-  if(username === "pradeep"){
+  if(username === "admin"){
     return true;
   }
   return false;
