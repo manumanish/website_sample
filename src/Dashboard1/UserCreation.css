@@ -1,0 +1,633 @@
+
+.desktop{
+/* Desktop - 1 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+position: relative;
+width: 1440px;
+height: 1024px;
+background: #FFFFFF;
+}
+
+.MainGroup{
+/* MainGroup */
+
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+
+}
+
+.SideMenu{
+    /* SideMenu */
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+
+position: fixed;
+width: 200px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: #D9D9D9;
+
+
+}
+
+.Rect2{
+    /* Rectangle 2 */
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+
+position: fixed;
+width: 200px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: #D9D9D9;
+}
+
+
+.UserForm{
+/* UserForm */
+
+position: absolute;
+width: 1134px;
+height: 848px;
+left: 200px;
+top: 18px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.UserFormHeader{
+    /* UserFormHeader */
+
+
+position: fixed;
+width: 317px;
+height: 33px;
+left: 226px;
+top: 18px;
+
+}
+
+
+.FirstBox{
+/* FirstBox */
+
+
+position: fixed;
+width: 556px;
+height: 154px;
+left: 200px;
+top: 61px;
+}
+
+.UserCreation{
+    /* User Creation */
+position: fixed;
+width: 317px;
+height: 33px;
+left: 243px;
+top: 110px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+color: #000000;
+}
+
+.Line1{
+/* Line 1 */
+
+
+position: fixed;
+width: 474px;
+height: 2.03px;
+left: 200.01px;
+top: 61px;
+
+background: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), #000000;
+mix-blend-mode: darken;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: rotate(0.24deg);
+
+}
+
+.label1{
+/* Account Name */
+
+
+position: fixed;
+width: 215px;
+height: 52px;
+left: 222px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+
+}
+
+.AccountNameInput{
+/* Account Name */
+
+
+position: absolute;
+width: 215px;
+height: 52px;
+left: 222px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+}
+
+.Account_ID{
+    /* Account_ID */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 239px;
+top: 237px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+
+.AccountIdInput{
+    /* AccountIdInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 513px;
+top: 255px;
+border: 1px solid #000000;
+}
+
+.SecondBox{
+    /* SecondBox */
+position: fixed;
+width: 1129px;
+height: 240px;
+left: 217px;
+top: 333px;
+}
+
+.Line2{
+    /* Line2 */
+position: fixed;
+width: 1128.99px;
+height: 1.82px;
+left: 217px;
+top: 334.82px;
+background: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), #000000;
+mix-blend-mode: darken;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.Instance_Type{
+    /* Instance_Type */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 239px;
+top: 351px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+.InstanceTypeInput{
+    /* InstanceTypeInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 513px;
+top: 362px;
+border: 1px solid #000000;
+}
+
+.NumNodes{
+    /* NumNodes */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 798px;
+top: 351px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+.NumNodesInput{
+    /* NumNodesInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 1038px;
+top: 362px;
+
+border: 1px solid #000000;
+}
+
+.Driver_Size{
+/* Driver_Size */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 239px;
+top: 427px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+
+}
+
+.DriverSizeInput{
+    /* DriverSizeInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 513px;
+top: 447px;
+border: 1px solid #000000;
+}
+
+
+.VDI_Instance_Type{
+    /* VDI_Instance_Type */
+position: fixed;
+width: 240px;
+height: 56px;
+left: 232px;
+top: 503px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+
+}
+
+.VDIInstanceTypeInput{
+    /* VDIInstanceTypeInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 516px;
+top: 521px;
+border: 1px solid #000000;
+}
+
+.IsSuperUser{
+    /* Is Super User */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 798px;
+top: 427px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+
+}
+
+.IsSuperSizeInput{
+    /* IsSuperSizeInput */
+position: fixed;
+width: 51px;
+height: 44px;
+left: 1038px;
+top: 441px;
+border: 1px solid #000000;
+}
+.MaintenanceTime{
+    /* Maintenance Time */
+position: fixed;
+width: 215px;
+height: 52px;
+left: 798px;
+top: 505px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+.MaintenanceTimeInput{
+    /* MaintenanceTimeInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 1038px;
+top: 518px;
+border: 1px solid #000000;
+}
+
+.ThirdBox{
+    /* ThirdBox */
+position: fixed;
+width: 1128.99px;
+height: 249px;
+left: 222px;
+top: 611px;
+
+}
+
+.Line4{
+    /* Line 4 */
+position: fixed;
+width: 1128.99px;
+height: 1.02px;
+left: 222px;
+top: 612.02px;
+background: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #000000, #000000), #000000;
+mix-blend-mode: darken;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.MySQLDBName{
+    /* My SQL DB Name */
+position: fixed;
+width: 240px;
+height: 56px;
+left: 239px;
+top: 623px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+.MySQLDBNameInput{
+    /* MySQLDBNameInput */
+
+
+position: fixed;
+width: 260px;
+height: 52px;
+left: 516px;
+top: 649px;
+
+border: 1px solid #000000;
+}
+
+.MYSQLDBUserName{
+    /* My SQLDB User Name */
+
+
+position: fixed;
+width: 255px;
+height: 64px;
+left: 232px;
+top: 701px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+}
+
+.MySqlDBUserNameInput{
+    /* MySqlDBUserNameInput */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 516px;
+top: 720px;
+border: 1px solid #000000;
+}
+
+.MYSQLDBPassword{
+    /* My SQLDB Password */
+position: fixed;
+width: 255px;
+height: 64px;
+left: 232px;
+top: 786px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+}
+.MySQLDBPassword{
+    /* MySQLDBPassword */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 513px;
+top: 808px;
+border: 1px solid #000000;
+}
+
+.PostgresUserName{
+    /* Postgres User Name */
+position: fixed;
+width: 255px;
+height: 64px;
+left: 805px;
+top: 701px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+}
+
+.PostUserName{
+    /* PostUserName */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 1086px;
+top: 720px;
+border: 1px solid #000000;
+}
+
+.PostgresPassword{
+    /* Postgres Password */
+position: fixed;
+width: 255px;
+height: 64px;
+left: 805px;
+top: 780px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: flex-end;
+color: #000000;
+
+}
+
+.PostPassword{
+    /* PostPassword */
+position: fixed;
+width: 260px;
+height: 52px;
+left: 1086px;
+top: 808px;
+border: 1px solid #000000;
+}
+
+.Down{
+    
+position: absolute;
+width: 1039px;
+height: 57px;
+left: 312px;
+top: 901px;
+
+}
+
+.message{
+    /* message */
+position: absolute;
+width: 777px;
+height: 46px;
+left: 312px;
+top: 912px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+color: #000000;
+}
+
+.Button{
+    /* Button */
+position: fixed;
+width: 200px;
+height: 50px;
+left: 1151px;
+top: 901px;
+
+}
+
+.LoginButton{
+    /* LoginButton */
+box-sizing: border-box;
+position: fixed;
+width: 200px;
+height: 50px;
+left: 1151px;
+top: 901px;
+background: rgba(120, 188, 103, 0.61);
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.SideMenu1{
+    /* Group 1 */
+
+
+position: fixed;
+width: 204.57px;
+height: 203px;
+left: 21px;
+top: 80px;
+
+}
