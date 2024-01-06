@@ -90,3 +90,30 @@ async function createMySQLUser(connection, username, password) {
         throw error;
     }
 }
+
+async function dropMySQLDatabaseAndUser(connection, dbName, username) {
+    try {
+        await connection.query(`DROP DATABASE IF EXISTS ${dbName}`);
+        console.log(`MySQL database "${dbName}" dropped successfully`);
+
+        await connection.query(`DROP USER IF EXISTS '${username}'@'%'`);
+        console.log(`MySQL user "${username}" dropped successfully`);
+    } catch (error) {
+        console.error('Error dropping MySQL database and user:', error);
+        throw error;
+    }
+}
+
+
+async function dropPostgresDatabaseAndUser(client, dbName, username) {
+    try {
+        await client.query(`DROP DATABASE IF EXISTS ${dbName}`);
+        console.log(`PostgreSQL database "${dbName}" dropped successfully`);
+
+        await client.query(`DROP USER IF EXISTS ${username}`);
+        console.log(`PostgreSQL user "${username}" dropped successfully`);
+    } catch (error) {
+        console.error('Error dropping PostgreSQL database and user:', error);
+        throw error;
+    }
+}
