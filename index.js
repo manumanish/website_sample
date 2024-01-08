@@ -10,7 +10,7 @@ exports.handler = async (event) => {
                     newMySQLDatabase,
                     newPostgresUser,
                     newMySQLUser,
-                    action,
+                    action, // assuming 'create' or 'delete'
                 },
             },
         } = event;
@@ -23,6 +23,7 @@ exports.handler = async (event) => {
             port: pgPort,
         };
 
+        // MySQL configuration
         const mysqlConfig = {
             host: mysqlHost,
             user: mysqlUser,
@@ -76,8 +77,8 @@ exports.handler = async (event) => {
 
 async function createPostgresDatabase(client, dbName) {
     try {
-        await client.query(CREATE DATABASE ${dbName});
-        console.log(PostgreSQL database "${dbName}" created successfully);
+        await client.query(`CREATE DATABASE ${dbName}`);
+        console.log(`PostgreSQL database "${dbName}" created successfully`);
     } catch (error) {
         console.error('Error creating PostgreSQL database:', error);
         throw error;
@@ -86,8 +87,8 @@ async function createPostgresDatabase(client, dbName) {
 
 async function createMySQLDatabase(connection, dbName) {
     try {
-        await connection.query(CREATE DATABASE ${dbName});
-        console.log(MySQL database "${dbName}" created successfully);
+        await connection.query(`CREATE DATABASE ${dbName}`);
+        console.log(`MySQL database "${dbName}" created successfully`);
     } catch (error) {
         console.error('Error creating MySQL database:', error);
         throw error;
@@ -96,8 +97,8 @@ async function createMySQLDatabase(connection, dbName) {
 
 async function createPostgresUser(client, username, password) {
     try {
-        await client.query(CREATE USER ${username} WITH PASSWORD '${password}');
-        console.log(PostgreSQL user "${username}" created successfully);
+        await client.query(`CREATE USER ${username} WITH PASSWORD '${password}'`);
+        console.log(`PostgreSQL user "${username}" created successfully`);
     } catch (error) {
         console.error('Error creating PostgreSQL user:', error);
         throw error;
@@ -106,8 +107,8 @@ async function createPostgresUser(client, username, password) {
 
 async function createMySQLUser(connection, username, password) {
     try {
-        await connection.query(CREATE USER '${username}'@'%' IDENTIFIED BY '${password}');
-        console.log(MySQL user "${username}" created successfully);
+        await connection.query(`CREATE USER '${username}'@'%' IDENTIFIED BY '${password}'`);
+        console.log(`MySQL user "${username}" created successfully`);
     } catch (error) {
         console.error('Error creating MySQL user:', error);
         throw error;
@@ -116,11 +117,11 @@ async function createMySQLUser(connection, username, password) {
 
 async function dropPostgresDatabaseAndUser(client, dbName, username) {
     try {
-        await client.query(DROP DATABASE IF EXISTS ${dbName});
-        console.log(PostgreSQL database "${dbName}" dropped successfully);
+        await client.query(`DROP DATABASE IF EXISTS ${dbName}`);
+        console.log(`PostgreSQL database "${dbName}" dropped successfully`);
 
-        await client.query(DROP USER IF EXISTS ${username});
-        console.log(PostgreSQL user "${username}" dropped successfully);
+        await client.query(`DROP USER IF EXISTS ${username}`);
+        console.log(`PostgreSQL user "${username}" dropped successfully`);
     } catch (error) {
         console.error('Error dropping PostgreSQL database and user:', error);
         throw error;
@@ -129,11 +130,11 @@ async function dropPostgresDatabaseAndUser(client, dbName, username) {
 
 async function dropMySQLDatabaseAndUser(connection, dbName, username) {
     try {
-        await connection.query(DROP DATABASE IF EXISTS ${dbName});
-        console.log(MySQL database "${dbName}" dropped successfully);
+        await connection.query(`DROP DATABASE IF EXISTS ${dbName}`);
+        console.log(`MySQL database "${dbName}" dropped successfully`);
 
-        await connection.query(DROP USER IF EXISTS '${username}'@'%');
-        console.log(MySQL user "${username}" dropped successfully);
+        await connection.query(`DROP USER IF EXISTS '${username}'@'%'`);
+        console.log(`MySQL user "${username}" dropped successfully`);
     } catch (error) {
         console.error('Error dropping MySQL database and user:', error);
         throw error;
