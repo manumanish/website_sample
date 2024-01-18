@@ -86,12 +86,29 @@ async function renamePostgresDatabase(client, oldDbName, newDbName) {
     }
 }
 
-async function renameMySQLDatabase(connection, newDbName) {
+async function renameMySQLDatabase(connection, oldDbName, newDbName) {
     try {
-        await connection.query(`ALTER DATABASE ${newDbName} UPGRADE DATA DIRECTORY NAME`);
-        console.log(`MySQL database renamed to "${newDbName}" successfully`);
+        // Create a new database with the new name
+        await connection.query(`CREATE DATABASE ${newDbName}`);
+
+        // Get a list of tables in the old database
+        const [rows, fields] = await connection.query(`SHOW TABLES FROM ${oldDbName}`);
+
+        // Iterate through each table and copy its data to the new database
+        for (const row of rows) {
+            const tableName = row[`Tables_in_${oldDbName}`];
+
+            // Copy data from the old table to the new one
+            await connection.query(`CREATE TABLE ${newDbName}.${tableName} AS SELECT * FROM ${oldDbName}.${tableName}`);
+        }
+
+        // Drop the old database
+        await connection.query(`DROP DATABASE ${oldDbName}`);
+
+        console.log(`MySQL database "${oldDbName}" renamed to "${newDbName}" successfully`);
     } catch (error) {
         console.error('Error renaming MySQL database:', error);
         throw error;
     }
 }
+
