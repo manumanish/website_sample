@@ -112,3 +112,64 @@ async function renameMySQLDatabase(connection, oldDbName, newDbName) {
     }
 }
 
+import boto3
+import json
+
+secrets_manager = boto3.client('secretsmanager')
+lambda_client = boto3.client('lambda')
+dynamodb_client = boto3.client('dynamodb')
+
+def invoke_lmb(params, function_name):
+    try:
+        resp = lambda_client.invoke(
+            FunctionName=function_name,
+            InvocationType="Event",
+            Payload=json.dumps(params)
+        )
+        return resp
+    except Exception as e:
+        raise RuntimeError("Error invoking Lambda function: {}".format(e))
+
+def write_ddb_table(client, params):
+    try:
+        SecretString = json.dumps({
+            f"{params['account_id']}/mysql": f"{params['username']}/{params['password']}",
+            f"{params['account_id']}/postgres": f"{params['username']}/{params['password']}"
+        })
+        print(SecretString)
+        secret_response = secrets_manager.put_secret_value(
+            SecretId='YourSecretName',
+            SecretString=SecretString
+        )
+        
+        del params['username']
+        del params['password']
+        
+        response = client.put_item(
+            TableName='YourTableName',
+            Item=params
+        )
+        return response
+    except Exception as e:
+        raise RuntimeError("Error putting item to DynamoDB: {}".format(e))
+
+def lambda_handler(event, context):
+    try:
+        params = event['body-json']
+        res_ddb = write_ddb_table(dynamodb_client, params)
+        res_lmb = invoke_lmb(params, "YourLambdaFunctionName")
+        return {
+            'statusCode': 200,
+            'body': json.dumps({
+                'ddb_response': res_ddb,
+                'lmb_response': res_lmb
+            })
+        }
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'body': json.dumps({
+                'error': str(e)
+            })
+        }
+
